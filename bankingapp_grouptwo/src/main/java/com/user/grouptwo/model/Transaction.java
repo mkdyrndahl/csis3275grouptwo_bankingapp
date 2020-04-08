@@ -1,62 +1,86 @@
 package com.user.grouptwo.model;
-import java.math.BigDecimal;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 public class Transaction {
-	private Integer transactionNumber;
-	private String date;
 	private String description;
+	private String paymentDate;
+	private String mood;
 	private String category;
-	private Integer mood;
-	private BigDecimal amount;
-	
-	public Integer getTransactionNumber() {
-		return transactionNumber;
+	private Double amount;
+	private String email;
+	private String color;
+	private int index;
+	private String action;
+
+	public String getAction() {
+		return action;
 	}
-	
-	public void setTransactionNumber(Integer transactionNumber) {
-		this.transactionNumber = transactionNumber;
+
+	public void setAction(String action) {
+		this.action = action;
 	}
-	
-	public String getDate() {
-		return date;
+
+	public int getIndex() {
+		return index;
 	}
-	
-	public void setDate(String date) {
-		this.date = date;
+
+	public void setIndex(int index) {
+		this.index = index;
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
-	
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	public String getPaymentDate() {
+		return paymentDate;
+	}
+
+	public void setPaymentDate(String paymentDate) {
+		this.paymentDate = paymentDate;
+	}
+
+	public String getMood() {
+		return mood;
+	}
+
+	public void setMood(String mood) {
+		this.mood = mood;
+	}
+
 	public String getCategory() {
 		return category;
 	}
-	
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	public Integer getMood() {
-		return mood;
-	}
-	
-	public void setMood(Integer mood) {
-		this.mood = mood;
-	}
-	
-	public BigDecimal getAmount() {
+
+	public Double getAmount() {
 		return amount;
 	}
-	
-	public void setAmount(BigDecimal amount) {
+
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
-	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
 }

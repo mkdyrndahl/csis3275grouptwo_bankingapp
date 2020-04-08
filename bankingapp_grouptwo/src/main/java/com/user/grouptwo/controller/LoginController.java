@@ -24,6 +24,7 @@ public class LoginController {
 	
 	/**
 	 * Create new signUpForm object for empty from
+	 * @param <LoginInfo>
 	 * 
 	 * @return
 	 */
@@ -41,7 +42,7 @@ public class LoginController {
 	public String login(HttpSession session) {
 	    User user = (User) session.getAttribute("user");
 	    if(user != null) {
-	    	return "login-success";
+	    	return "transaction";
 	    }
 	    return "login";
 	}
@@ -52,11 +53,23 @@ public class LoginController {
 		model.addAttribute("message", "Login Fail");
 
 		if(user != null && user.getPassword().equals(loginInfo.getPassword())) {
-			model.addAttribute("student", user);
+			model.addAttribute("user", user);
 			model.addAttribute("message", "Login Successful");
-			return "login-success";
+			return "home";
 		}
 		return "login";
 	}
+	
+	@GetMapping("/logoutAccount")
+	public String logoutAccount(HttpSession session) {
+	    User user = (User) session.getAttribute("user");
+	    if(user != null) {
+	    	session.invalidate();
+	    	System.out.println("Session has been removed");
+	    	return "login";
+	    }
+	    return "login";
+	}
+
 	
 }
